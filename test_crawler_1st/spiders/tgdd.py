@@ -17,17 +17,26 @@ class TgddSpider(scrapy.Spider):
             print('Crawling from:', response.url)
             data = {
                 'link': response.url,
-                'category': response.css('div.breadcrumb-wrapper > ul > li > a > span::text').getall(),
-                'name': response.css('div.product-info-container > a > h1::text').get(),
-                'img_url': response.css('div.product-slide-container > div.big-image > img::attr("data-src")').get(),
-                'brand': response.css('div.product-info-container > div.brand > a::text').get(),
-                'short_desc': '\n'.join(response.css('div.product-info-container > div.product-short-desc p::text').getall()),
 
-                'priority_price': response.css('div.product-info-container > div.priority-store span.store-price.product-price::text').get(),
-                'priority_store': response.css('div.product-info-container > div.priority-store img::attr("title")').get(),
+                'name': response.css('div.rowtop h1::text').get(),
+                'rate': response.css('div.toprt div.crt b::text').get(),
+                'category': response.css('ul.breadcrumb > li > a::text').getall(),
+                'price': response.css('div.area_price > strong::text').get(),
+                'sale_price': response.css('div.box-online > div > strong:text').get(),
+                'end_date_sale': response.css('div.box-online > div > div::attr(data-time)').get(),
+                'promotion_infor': '\n'.join([
+                    ''.join(c.css('*::text').getall())
+                    for c in response.css('div.infopr span')
+                ]),
+
+                'img_src': response.css('meta[itemprop="image"]::attr(content)').get(),
+                'short_description': response.css('meta[name="description"]::attr(content)').get(),
+                'specification': ','.join([
+                    ''.join(c.css('*::text').getall())
+                    for c in response.css('ul.parameter span,ul.parameter div')
+                ]),
+
             }
-
-
 
             with open(OUTPUT_FILENAME, 'a', encoding='utf8') as f:
                 f.write(json.dumps(data, ensure_ascii=False))
@@ -36,4 +45,4 @@ class TgddSpider(scrapy.Spider):
                 self.crawler.stats.set_value('CRAWLED_COUNT', self.CRAWLED_COUNT)
                 print('SUCCESS:', response.url)
 
-    #    yield from response.follow_all(css=a[href^="/"]::attr(href)', callback=self.parse)
+        yield from response.follow_all(css='a[href^="/"]::attr(href)', callback=self.parse)
