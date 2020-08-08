@@ -14,3 +14,4 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
 <br/>
 2.Thương mại điện tử (chạy file tgdd.py) <br/>
 -Nguồn: https://www.thegioididong.com/ <br/>
+... Phần này code em đang dính 1 số lỗi khi crawl nhiều link chưa chạy được , em đang sửa hoàn thiện ạ ... <br/>
