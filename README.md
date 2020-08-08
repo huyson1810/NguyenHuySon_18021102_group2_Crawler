@@ -1,6 +1,6 @@
 # Crawler_Data_First <br/>
 Crawler Data DSKTlab assignment2 <br/>
-1.Tin tức -Nguồn: https://kenh14.vn/<br/>
+1.Tin tức (chạy file kenh14_test.py) -Nguồn: https://kenh14.vn/<br/>
 -Số lượng bài: 10k+<br/>
 -Tốc độ: 300 bài / phút<br/>
 -Trạng thái: đã chạy được đầy đủ <br/>
@@ -12,4 +12,5 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
   Kiểm tra xem link đó có phải là link cần crawl không?<br/>
   Sau khi kiểm tra thì ghi lại data đã crawl ra file dạng text<br/>
 <br/>
-2.Thương mại điện tử -Nguồn: https://www.thegioididong.com/ <br/>
+2.Thương mại điện tử (chạy file tgdd.py) <br/>
+-Nguồn: https://www.thegioididong.com/ <br/>
