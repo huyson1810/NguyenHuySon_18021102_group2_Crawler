@@ -45,4 +45,4 @@ class TgddSpider(scrapy.Spider):
             self.crawler.stats.set_value('CRAWLED_COUNT', self.CRAWLED_COUNT)
             print('SUCCESS:', response.url)
 
-       # yield from response.follow_all(css='a[href^="https://www.sosanhgia.com"]::attr(href), a[href^="/"]::attr(href)', callback=self.parse)
+       # yield from response.follow_all(css='a[href^="https://www.thegioididong.com"]::attr(href), a[href^="/"]::attr(href)', callback=self.parse)
