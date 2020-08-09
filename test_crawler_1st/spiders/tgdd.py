@@ -13,7 +13,7 @@ class TgddSpider(scrapy.Spider):
     CRAWLED_COUNT = 0
 
     def parse(self, response):
-        if response.status == 200 and response.css('body::attr("id")').get() == 'product-detail':
+        if response.status == 200 and response.css('section::attr(class)').get() == 'type0':
             print('Crawling from:', response.url)
             data = {
                 'link': response.url,
@@ -22,8 +22,10 @@ class TgddSpider(scrapy.Spider):
                 'rate': response.css('div.toprt div.crt b::text').get(),
                 'category': response.css('ul.breadcrumb > li > a::text').getall(),
                 'price': response.css('div.area_price > strong::text').get(),
-                'sale_price': response.css('div.box-online > div > strong:text').get(),
-                'end_date_sale': response.css('div.box-online > div > div::attr(data-time)').get(),
+
+                #'sale_price': response.css('div.box-online > div > strong:text').get(),
+                #'end_date_sale': response.css('div.box-online > div > div::attr(data-time)').get(),
+
                 'promotion_infor': '\n'.join([
                     ''.join(c.css('*::text').getall())
                     for c in response.css('div.infopr span')
@@ -45,4 +47,4 @@ class TgddSpider(scrapy.Spider):
                 self.crawler.stats.set_value('CRAWLED_COUNT', self.CRAWLED_COUNT)
                 print('SUCCESS:', response.url)
 
-        yield from response.follow_all(css='a[href^="/"]::attr(href)', callback=self.parse)
+        yield from response.follow_all(css='a[href^="https://www.thegioididong.com/"]::attr(href), a[href^="/"]::attr(href)', callback=self.parse)
