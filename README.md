@@ -1,7 +1,7 @@
 # Crawler_Data_First <br/>
 Crawler Data DSKTlab assignment2 <br/>
 1.Tin tức (chạy file kenh14_test.py) -Nguồn: https://kenh14.vn/<br/>
--Số lượng bài: 10k+<br/>
+-Số lượng bài: 5k+ (file txt trong output) <br/>
 -Tốc độ: 300 bài / phút<br/>
 -Trạng thái: đã chạy được đầy đủ <br/>
 -Thu thập được: link , tiêu đề, tác giả, nguồn cung cấp, mô tả tóm tắt, tags, ngày xuất bản, nội dung<br/>
@@ -14,9 +14,9 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
 <br/>
 2.Thương mại điện tử (chạy file tgdd.py) <br/>
 -Nguồn: https://www.thegioididong.com/ <br/>
-... Phần này code em đang dính 1 số lỗi khi crawl nhiều link chưa chạy được , em đang sửa hoàn thiện ạ ... <br/>
+ <br/>
 
 -Số lượng bài:  <br/>
 -Tốc độ:  bài / phút<br/>
--Trạng thái: đã chạy được, crawl được nhưng đang fix 1 số lỗi không lấy được nội dung về sản phẩm trong bài viết  <br/>
+-Trạng thái: đã chạy được, crawl được hầu hết nhưng đang fix 1 số lỗi không lấy được nội dung về sản phẩm trong bài viết ạ <br/>
 -Thu thập được: link , tên sản phẩm , đánh giá trung bình, phân loại/hãng, giá cả, nguồn ảnh đại diện, mô tả ngắn gọn, mô tả thông tin sản phẩm cụ thể, quảng cáo <br/>
