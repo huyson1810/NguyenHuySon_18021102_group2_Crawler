@@ -16,8 +16,8 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
 -Nguồn: https://www.thegioididong.com/ <br/>
  <br/>
 
--Số lượng bài:  <br/>
--Tốc độ:  bài / phút<br/>
--Trạng thái: đã chạy được, crawl được hầu hết nhưng đang fix 1 số lỗi không lấy được nội dung về sản phẩm trong bài viết ạ <br/>
--Thu thập được: link , tên sản phẩm , đánh giá trung bình, phân loại/hãng, giá cả, nguồn ảnh đại diện, mô tả ngắn gọn, mô tả thông tin sản phẩm cụ thể, quảng cáo <br/>
+-Số lượng bài: khoảng 2k sản phẩm (để máy chạy trong 1h) <br/>
+-Tốc độ: khoảng hơn 30 sản phẩm / phút<br/>
+-Trạng thái: đã chạy được hoàn thiện <br/>
+-Thu thập được: link , tên sản phẩm , đánh giá trung bình, phân loại/hãng, giá cả, nguồn ảnh đại diện, giới thiệu sản phẩm, mô tả ngắn gọn, mô tả thông tin sản phẩm cụ thể, quảng cáo <br/>
 Phần source code các chức năng tương tự như crawl news
