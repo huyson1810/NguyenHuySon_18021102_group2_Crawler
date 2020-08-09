@@ -15,8 +15,8 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
 2.Thương mại điện tử (chạy file tgdd.py) <br/>
 -Nguồn: https://www.thegioididong.com/ <br/>
 ... Phần này code em đang dính 1 số lỗi khi crawl nhiều link chưa chạy được , em đang sửa hoàn thiện ạ ... <br/>
--- code hiện tại đang chỉ thu được 1 link cụ thể qua file tgdd_t1.py --
+
 -Số lượng bài:  <br/>
 -Tốc độ:  bài / phút<br/>
--Trạng thái: đã chạy được 1 link cụ thể đầy đủ <br/>
+-Trạng thái: đã chạy được, crawl được nhưng đang fix 1 số lỗi không lấy được category trong 1 số trường hợp, và không lấy được nội dung về sản phẩm trong bài viết  <br/>
 -Thu thập được: link , tên sản phẩm , đánh giá trung bình, phân loại/hãng, giá cả, nguồn ảnh đại diện, mô tả ngắn gọn, mô tả thông tin sản phẩm cụ thể, quảng cáo <br/>
