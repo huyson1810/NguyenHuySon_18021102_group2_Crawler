@@ -35,21 +35,22 @@ class TgddSpider(scrapy.Spider):
 
                 'list_img_src': response.css('meta[itemprop="image"]::attr(content)').get(),
 
-                # 'short_description': response.css('meta[name="description"]::attr(content)').get(),
+                'introduction': response.css('meta[name="description"]::attr(content)').get(),
+
                 'short_description': ','.join([
                     ''.join(c.css('*::text').getall())
                     for c in response.css('ul.parameter span,ul.parameter div')
                 ]),
 
-                'specification': '\n'.join([
-                    ' '.join(c.css('*::text').getall())
-                    for c in response.css('article.area_article.area_articleFull p')
-                ])
+                'specification':
+                    ''.join([
+                        ''.join(c.css('*::text').getall())
+                        for c in response.css('article.area_article p')
+                    ]),
 
             }
 
-            if data['category'][0] == 'Trang chủ':
-                del data['category'][0]  # delete "Trang chu"
+            data['category'] = data['category'].replace('Trang chủ', '')
 
             with open(OUTPUT_FILENAME, 'a', encoding='utf8') as f:
                 f.write(json.dumps(data, ensure_ascii=False))
