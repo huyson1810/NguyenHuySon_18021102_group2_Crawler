@@ -9,7 +9,7 @@ OUTPUT_FILENAME = 'output/e-commerce/tgdd_t1_{}.txt'.format(datetime.now().strft
 class TgddSpider(scrapy.Spider):
     name = 'tgdd_t1'
     allowed_domains = ['thegioididong.com']
-    start_urls = ['https://www.thegioididong.com/dtdd/oppo-a52']
+    start_urls = ['https://www.thegioididong.com/loa-laptop/loa-bluetooth-icutes-mb-m818-cun']
     CRAWLED_COUNT = 0
 
     def parse(self, response):
@@ -20,9 +20,10 @@ class TgddSpider(scrapy.Spider):
 
             'name': response.css('div.rowtop h1::text').get(),
             'rate': str(response.css('div.toprt div.crt b::text').get()),
-            'category': [
-                k.strip() for k in response.css('ul.breadcrumb > li > a::text').getall()
-            ],
+            'category': '/ '.join([
+                ''.join(c.css('*::text').getall()) for c in response.css('ul.breadcrumb > li > a span')
+            ]),
+
             'price': response.css('div.area_price > strong::text').get(),
             #            'sale_price': response.css('div.box-online > div > strong:text').get(),
             #            'end_date_sale': response.css('div.box-online > div > div::attr(data-time)').get(),
@@ -33,11 +34,16 @@ class TgddSpider(scrapy.Spider):
             ]),
 
             'img_src': response.css('meta[itemprop="image"]::attr(content)').get(),
-            'short_description': str(response.css('meta[name="description"]::attr(content)').get()).strip(),
-            'specification': ','.join([
+            #'short_description': str(response.css('meta[name="description"]::attr(content)').get()).strip(),
+            'short_description': ','.join([
                 ''.join(c.css('*::text').getall())
                 for c in response.css('ul.parameter span,ul.parameter div')
             ]),
+
+            'specification': '\n'.join([
+                ' '.join(c.css('*::text').getall())
+                for c in response.css('article.area_article.area_articleFull > p')
+            ])
 
         }
 
