@@ -20,3 +20,4 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
 -Tốc độ:  bài / phút<br/>
 -Trạng thái: đã chạy được, crawl được hầu hết nhưng đang fix 1 số lỗi không lấy được nội dung về sản phẩm trong bài viết ạ <br/>
 -Thu thập được: link , tên sản phẩm , đánh giá trung bình, phân loại/hãng, giá cả, nguồn ảnh đại diện, mô tả ngắn gọn, mô tả thông tin sản phẩm cụ thể, quảng cáo <br/>
+Phần source code các chức năng tương tự như crawl news
