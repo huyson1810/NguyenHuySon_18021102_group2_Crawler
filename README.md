@@ -18,5 +18,5 @@ Hàm parse(self,response):hàm gọi để xử lý phản hồi được tải 
 
 -Số lượng bài:  <br/>
 -Tốc độ:  bài / phút<br/>
--Trạng thái: đã chạy được, crawl được nhưng đang fix 1 số lỗi không lấy được category trong 1 số trường hợp, và không lấy được nội dung về sản phẩm trong bài viết  <br/>
+-Trạng thái: đã chạy được, crawl được nhưng đang fix 1 số lỗi không lấy được nội dung về sản phẩm trong bài viết  <br/>
 -Thu thập được: link , tên sản phẩm , đánh giá trung bình, phân loại/hãng, giá cả, nguồn ảnh đại diện, mô tả ngắn gọn, mô tả thông tin sản phẩm cụ thể, quảng cáo <br/>
